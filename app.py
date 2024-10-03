@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+
 # Load existing user data from file if available, otherwise initialize an empty dictionary
 try:
     with open('users.pkl', 'rb') as f:
@@ -13,6 +14,7 @@ except FileNotFoundError:
 @app.route('/')
 def index():
     return render_template('index.html')
+    print(1)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
